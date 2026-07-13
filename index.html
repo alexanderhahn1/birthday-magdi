@@ -1,11 +1,1206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Geburtstag Magdi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7fb">
+  <title>Magdis 18. Geburtstagsseite</title>
+  <style>
+    :root {
+      --paper: #fffaf7;
+      --paper-soft: #fff2f8;
+      --ink: #262126;
+      --muted: #776b74;
+      --line: rgba(38, 33, 38, 0.12);
+      --pink: #f45aa0;
+      --blue: #4469d8;
+      --berry: #334193;
+      --green: #45a66a;
+      --red: #e85d61;
+      --yellow: #f5c84c;
+      --shadow: 0 18px 50px rgba(46, 29, 54, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(244, 90, 160, 0.045) 1px, transparent 1px) 0 0 / 26px 26px,
+        linear-gradient(180deg, rgba(68, 105, 216, 0.035) 1px, transparent 1px) 0 0 / 26px 26px,
+        radial-gradient(circle at top left, rgba(244, 90, 160, 0.13), transparent 34rem),
+        linear-gradient(180deg, #fff7fb 0%, #fffdf7 42%, #f7fbff 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 0.7rem 0.9rem;
+      background: rgba(255, 250, 247, 0.88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav-scroll {
+      display: flex;
+      gap: 0.45rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-scroll a {
+      flex: 0 0 auto;
+      padding: 0.56rem 0.78rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: #4b3d48;
+      font-size: 0.84rem;
+      font-weight: 750;
+      text-decoration: none;
+      box-shadow: 0 8px 20px rgba(46, 29, 54, 0.06);
+    }
+
+    .section {
+      padding: 4.2rem 1.05rem;
+    }
+
+    .inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .hero {
+      min-height: calc(100svh - 3.5rem);
+      display: grid;
+      align-items: center;
+      padding-top: 2.2rem;
+      padding-bottom: 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 1.45rem;
+    }
+
+    .hero-grid > * {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      width: fit-content;
+      margin: 0 0 0.9rem;
+      padding: 0.38rem 0.65rem;
+      border: 1px solid rgba(244, 90, 160, 0.24);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: #8b3561;
+      font-size: 0.78rem;
+      font-weight: 850;
+      letter-spacing: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 11.5vw, 6.8rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+      text-wrap: balance;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 0.7rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 8vw, 4.1rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 0.45rem;
+      font-size: 1.05rem;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 42rem;
+      margin-bottom: 1.2rem;
+      color: #55464f;
+      font-size: clamp(1.05rem, 3.4vw, 1.35rem);
+      overflow-wrap: break-word;
+    }
+
+    .copy {
+      max-width: 42rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+      overflow-wrap: break-word;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.4rem;
+    }
+
+    .button {
+      min-height: 3rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.48rem;
+      padding: 0.82rem 1rem;
+      border: 0;
+      border-radius: 999px;
+      background: var(--ink);
+      color: #fff;
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 850;
+      text-decoration: none;
+      box-shadow: 0 16px 34px rgba(38, 33, 38, 0.2);
+      transition: transform 170ms ease, box-shadow 170ms ease;
+    }
+
+    .button:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 10px 20px rgba(38, 33, 38, 0.16);
+    }
+
+    .button.secondary {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--ink);
+      box-shadow: none;
+    }
+
+    .hero-note {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      padding: 1.1rem;
+      border: 1px solid rgba(38, 33, 38, 0.11);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-note::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(135deg, transparent 0 72%, rgba(244, 90, 160, 0.11) 72%),
+        linear-gradient(90deg, rgba(68, 105, 216, 0.07), transparent);
+    }
+
+    .note-content {
+      position: relative;
+      display: grid;
+      gap: 0.8rem;
+      min-width: 0;
+    }
+
+    .stamp {
+      width: fit-content;
+      transform: rotate(-4deg);
+      padding: 0.52rem 0.72rem;
+      border: 2px solid rgba(232, 93, 97, 0.62);
+      border-radius: 8px;
+      color: #c73e54;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55rem;
+      min-width: 0;
+    }
+
+    .mini-stat {
+      min-width: 0;
+      padding: 0.72rem 0.65rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 1.1rem;
+      line-height: 1.1;
+    }
+
+    .mini-stat span {
+      display: block;
+      margin-top: 0.15rem;
+      color: var(--muted);
+      font-size: 0.74rem;
+      font-weight: 750;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-kicker {
+      color: var(--pink);
+      font-size: 0.78rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .reasons-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .reason-card {
+      min-height: 5.7rem;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+      box-shadow: 0 12px 34px rgba(46, 29, 54, 0.08);
+      overflow: hidden;
+    }
+
+    .reason-top {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.95rem;
+    }
+
+    .number {
+      width: 2.25rem;
+      height: 2.25rem;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: var(--paper-soft);
+      color: #9d336c;
+      font-weight: 950;
+    }
+
+    .reason-title {
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .chevron {
+      color: var(--muted);
+      font-weight: 900;
+      transition: transform 180ms ease;
+    }
+
+    .reason-card[aria-expanded="true"] .chevron {
+      transform: rotate(45deg);
+    }
+
+    .reason-detail {
+      display: none;
+      padding: 0 0.95rem 1rem 3.95rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .reason-card[aria-expanded="true"] .reason-detail {
+      display: block;
+    }
+
+    .family-wrap {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .family-row {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .family-label {
+      color: #7d6977;
+      font-size: 0.76rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .family-grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .person {
+      display: grid;
+      grid-template-columns: 4rem 1fr;
+      gap: 0.85rem;
+      align-items: center;
+      padding: 0.75rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 30px rgba(46, 29, 54, 0.08);
+    }
+
+    .person img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 14px;
+      object-fit: cover;
+      background: #f1e8ef;
+    }
+
+    .person small {
+      display: block;
+      margin-top: 0.12rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .family-origin {
+      padding: 1rem;
+      border-left: 4px solid var(--green);
+      border-radius: 14px;
+      background: rgba(69, 166, 106, 0.08);
+      color: #385446;
+    }
+
+    .berry-section {
+      position: relative;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, 0.22) 0 0.35rem, transparent 0.4rem),
+        radial-gradient(circle at 88% 22%, rgba(255, 255, 255, 0.18) 0 0.48rem, transparent 0.54rem),
+        linear-gradient(135deg, #2d367f, #405bb6 52%, #6877c8);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .berry-section .section-kicker,
+    .berry-section .copy,
+    .berry-section .lead {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .berry-panel {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.11);
+      box-shadow: 0 20px 55px rgba(0, 0, 0, 0.18);
+      backdrop-filter: blur(16px);
+    }
+
+    .berry-image {
+      position: relative;
+      min-height: 17rem;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
+        url("images/placeholder.jpg") center / cover;
+      overflow: hidden;
+    }
+
+    .berry-image::after {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 12px;
+      background: rgba(20, 25, 78, 0.72);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 850;
+    }
+
+    .berry-copy {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .berry-button {
+      background: #fff;
+      color: #30346e;
+      box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+    }
+
+    .flying-berry {
+      position: fixed;
+      z-index: 60;
+      width: auto;
+      height: auto;
+      pointer-events: none;
+      font-size: clamp(1.75rem, 8vw, 3.4rem);
+      line-height: 1;
+      animation: berryPop 1650ms ease-out forwards;
+      filter: drop-shadow(0 8px 12px rgba(10, 16, 60, 0.25));
+    }
+
+    @keyframes berryPop {
+      0% {
+        opacity: 0;
+        transform: translateY(16px) scale(0.3) rotate(0deg);
+      }
+      14% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-90px) scale(1.12) rotate(220deg);
+      }
+    }
+
+    .museum {
+      background: rgba(255, 255, 255, 0.45);
+    }
+
+    .masonry {
+      columns: 2 9.5rem;
+      column-gap: 0.72rem;
+    }
+
+    .museum-item {
+      width: 100%;
+      break-inside: avoid;
+      margin: 0 0 0.72rem;
+      padding: 0.32rem;
+      border: 1px solid rgba(38, 33, 38, 0.1);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(24px) scale(0.98);
+      transition: opacity 520ms ease, transform 520ms ease;
+      box-shadow: 0 12px 30px rgba(46, 29, 54, 0.08);
+    }
+
+    .museum-item.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .museum-item img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0.85rem;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.8rem;
+      align-items: start;
+    }
+
+    .dot {
+      width: 0.9rem;
+      height: 0.9rem;
+      margin-top: 0.42rem;
+      border-radius: 999px;
+      background: var(--pink);
+      box-shadow: 0 0 0 6px rgba(244, 90, 160, 0.14);
+    }
+
+    .timeline-card,
+    .letter {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 12px 34px rgba(46, 29, 54, 0.08);
+    }
+
+    .timeline-date {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 950;
+    }
+
+    .timeline-card p,
+    .letter p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .letter {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .letter::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(244, 90, 160, 0.1), transparent 42%, rgba(69, 166, 106, 0.08));
+    }
+
+    .letter > * {
+      position: relative;
+    }
+
+    .signature {
+      margin-top: 1.3rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: none;
+      place-items: center;
+      padding: 1rem;
+      background: rgba(20, 16, 22, 0.88);
+    }
+
+    .lightbox.is-open {
+      display: grid;
+    }
+
+    .lightbox img {
+      max-height: 82svh;
+      width: auto;
+      border-radius: 14px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 2.75rem;
+      height: 2.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.4rem;
+      font-weight: 850;
+      backdrop-filter: blur(12px);
+    }
+
+    @media (min-width: 720px) {
+      .section {
+        padding: 5.4rem 2rem;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.08fr 0.72fr;
+        align-items: center;
+      }
+
+      .reasons-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .family-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .berry-panel {
+        grid-template-columns: 0.85fr 1fr;
+        align-items: center;
+        padding: 1.25rem;
+      }
+
+      .masonry {
+        columns: 3 13rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .section {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+      }
+
+      .hero {
+        padding-top: 1.6rem;
+      }
+
+      h1 {
+        font-size: 2.08rem;
+      }
+
+      .hero-note {
+        padding: 0.95rem;
+      }
+    }
+
+    @media (max-width: 340px) {
+      h1 {
+        font-size: 1.94rem;
+      }
+
+      .mini-stat {
+        padding: 0.62rem 0.48rem;
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .reasons-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .family-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .masonry {
+        columns: 4 14rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 1ms !important;
+        transition-duration: 1ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Herzlichen Glückwunsch zum Geburtstag, Magdi!</h1>
+  <div class="page" id="top">
+    <nav class="topbar" aria-label="Seitennavigation">
+      <div class="nav-scroll">
+        <a href="#gruende">18 Gründe</a>
+        <a href="#familie">Familie</a>
+        <a href="#heidelbeeren">Heidelbeeren</a>
+        <a href="#museum">Museum</a>
+        <a href="#timeline">Geschichte</a>
+        <a href="#abschluss">Abschluss</a>
+      </div>
+    </nav>
+
+    <header class="section hero">
+      <div class="inner hero-grid">
+        <div>
+          <p class="eyebrow">Zusatz zum Brief • 27. Juli 2026</p>
+          <h1><span>Magdis 18.</span><span>Geburtstagsseite</span></h1>
+          <p class="lead">Ein kleines digitales Extra von Ali. Mit Erinnerungen, Familienchaos, Heidelbeeren und 18 Gründen, warum du einfach ziemlich legendär bist.</p>
+          <div class="hero-actions">
+            <a class="button" href="#gruende">Los geht's, Magdi</a>
+            <a class="button secondary" href="#museum">Direkt ins Museum</a>
+          </div>
+        </div>
+        <aside class="hero-note" aria-label="Geburtstagsnotiz">
+          <div class="note-content">
+            <span class="stamp">Offiziell 18</span>
+            <p class="copy">Diese Seite ist nicht zu ernst zu nehmen, aber sehr ernst gemeint. Für Magdi, für alle, die sie gernhaben, und für eine Fake-Familie, die irgendwie passiert ist.</p>
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <strong>18</strong>
+                <span>Gründe</span>
+              </div>
+              <div class="mini-stat">
+                <strong>1</strong>
+                <span>Tochter</span>
+              </div>
+              <div class="mini-stat">
+                <strong>∞</strong>
+                <span>Heidelbeeren</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="gruende">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Kapitel eins</span>
+            <h2>18 Gründe, warum Magdi legendär ist</h2>
+            <p class="copy">Die Reihenfolge mischt sich jedes Mal neu. Antippen, aufklappen, innerlich nicken.</p>
+          </div>
+          <div class="reasons-grid" id="reasonsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="familie">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Familienakte</span>
+            <h2>Der absolut offizielle Familienbaum</h2>
+            <p class="copy">Entstanden am Attersee, bestätigt durch Autofahrten, Insider und sehr fragwürdige Verwandtschaftsverhältnisse.</p>
+          </div>
+          <div class="family-wrap">
+            <div class="family-origin">
+              <strong>Ursprungsmythos:</strong> Ali und Mo vorne im Auto, Magdi hinten. Es war sofort klar: Das ist jetzt eine Familie am Weg in den Urlaub. Später wurde das Ganze durch ein sehr ehrliches "MAMMMAAAAA i brauch mei Handy!!" historisch einzementiert.
+            </div>
+            <!-- <p class="copy">Bilddateien fuer diesen Abschnitt: <strong>ali.jpg</strong>, <strong>mo.jpg</strong>, <strong>magdi.jpg</strong>, <strong>luca.jpg</strong>, <strong>sarah.jpg</strong>, <strong>viki.jpg</strong>, <strong>heigl.jpg</strong>, <strong>sevi.jpg</strong>, <strong>tobias.jpg</strong>, <strong>julia.jpg</strong>, <strong>lena.jpg</strong> in <strong>images/family/</strong>.</p>-->
+            <div class="family-row">
+              <div class="family-label">Großeltern</div>
+              <div class="family-grid">
+                <article class="person">
+                  <img src="images/family/viki.jpg" alt="Viki" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Mama Viki</h3><small>Die Mama, nach der in schwierigen Handy-Lagen gerufen wird.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/heigl.jpg" alt="Heigl" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Heigl</h3><small>Der Papa. Gerüchten zufolge ist er gar nicht der Papa von Ali.</small></div>
+                </article>
+              </div>
+            </div>
+            <div class="family-row">
+              <div class="family-label">Eltern</div>
+              <div class="family-grid">
+                <article class="person">
+                  <img src="images/family/ali.jpg" alt="Ali" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Ali</h3><small>Papa, Organisator und Verursacher mancher Familienereignisse.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/mo.jpg" alt="Mo" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Mo</h3><small>Mama beziehungsweise Ehefrau. Klingt komisch, ist aber aktenkundig.</small></div>
+                </article>
+              </div>
+            </div>
+            <div class="family-row">
+              <div class="family-label">Kinder</div>
+              <div class="family-grid">
+                <article class="person">
+                  <img src="images/family/magdi.jpg" alt="Magdi" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Magdi</h3><small>Tochter, Hauptperson und Familienmitglied mit maximaler Lebensfreude.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/luca.jpg" alt="Luca" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Luca</h3><small>Adoptivsohn. Wurde aufgenommen, weil diese Familie offenbar noch mehr Handlung gebraucht hat.</small></div>
+                </article>
+              </div>
+            </div>
+            <div class="family-row">
+              <div class="family-label">Weitere Beteiligte</div>
+              <div class="family-grid">
+                <article class="person">
+                  <img src="images/family/sarah.jpg" alt="Sarah alias Sandra" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Sarah / Sandra</h3><small>Familienhelferin. Name situationsabhängig, Funktion unverzichtbar.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/tobias.jpg" alt="Tobias" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Tobias</h3><small>Einseitige Affäre von Ali. Juristisch vermutlich schwierig.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/lena.jpg" alt="Lena" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Lena</h3><small>Freundin von Luca. Offiziell im Umfeld registriert.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/julia.jpg" alt="Julia" onerror="this.src='images/placeholder.jpg'">
+                  <div><h3>Julia</h3><small>Neue Freundin von Tobias und damit mitten in der Familienakte.</small></div>
+                </article>
+                <article class="person">
+                  <img src="images/family/sevi.jpg" alt="Sevi" onerror="this.src='images/place.jpg'">
+                  <div><h3>Sevi</h3><small>Onkel und Bruder. Seriöse Position in einer unseriösen Familienstruktur.</small></div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section berry-section" id="heidelbeeren">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Beweismittel H</span>
+            <h2>Die Heidelbeer-Akte</h2>
+            <p class="lead">Alles begann bei Magdis 15. Geburtstag, als Ali zuhause einfach alle Heidelbeeren von den Heidelbeerstauden gegessen hat.</p>
+          </div>
+          <div class="berry-panel">
+            <div class="berry-image" role="img">
+                <img src="images/blueberries/image.png" alt="Magdi mit Heidelbeeren" onerror="this.src='images/placeholder.jpg'">
+            </div>
+            <div>
+              <h3>Kurzer Aktenvermerk</h3>
+              <p class="berry-copy">Seitdem sind Heidelbeeren kein normales Obst mehr, sondern ein offizieller Insider. Besonders stark: b2b2b jedes Jahr eine Heidelbeerstaude zum Geburtstag, immer wieder von Magdi und unterschiedlichen Freundinnen. Das ist entweder ein sehr gutes Geschenk oder ein langfristiges Landwirtschaftsprojekt.</p>
+              <button class="button berry-button" type="button" id="berryButton">Heidelbeeren pflücken</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section museum" id="museum">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Ausstellung</span>
+            <h2>Magdi-Museum</h2>
+            <p class="copy">Eine fake-seriöse Galerie. Antippen öffnet das jeweilige Ausstellungsstück groß.</p>
+          </div>
+          <div class="masonry" id="museumGrid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="timeline">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Gruppen-Lore</span>
+            <h2>Die wichtigsten Kapitel</h2>
+            <p class="copy">Kurz gehalten, aber historisch natürlich höchst relevant.</p>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">27.07.2008</div>
+                <h3>Magdi erscheint</h3>
+                <p>Der Anfang einer ziemlich lebensfrohen, humorvollen und hilfsbereiten Hauptfigur.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">2018</div>
+                <h3>Hauptschul-Paralleluniversum</h3>
+                <p>Magdi ist zwar mit keinem direkt in der Klasse, aber Mo, Lukas, Tobi und Sarah sind in der Parallelklasse. Nah genug für die Geschichte.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Seit den Minikids</div>
+                <h3>Die glorreichen Vier</h3>
+                <p>Luca, Marcel, Lukas und Mo sind schon früh beim Trainingslager dabei. Aus Fussball wird mit der Zeit eine Freundesgruppe mit erstaunlich langer Laufzeit. Ali und Tobi stoßen bald dazu. Unendlich viele Geschichten und Momente gemeinsam enstehen.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Irgendwann danach</div>
+                <h3>Viki kommt dazu</h3>
+                <p>Über Lukas wird Viki mehr Teil der Runde. Die Geschichte endet irgendwann, zum ehemaligen Trauern von Luki, jedoch hat die Gruppe wieder ein neues Kapitel bekommen und ein weiteres Mitglied.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">15. Geburtstag</div>
+                <h3>Der Heidelbeer-Vorfall</h3>
+                <p>Ali isst alle Heidelbeeren von Magdis (Karins) Heidelbeerstauden. Seitdem ist das Thema offiziell nicht mehr erledigt.</p>
+                <p>P.S. Der Shopping-Trip muss noch immer nachgeholt werden!</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Danach, b2b2b</div>
+                <h3>Die Heidelbeerstauden-Ära</h3>
+                <p>Jedes Jahr wieder eine Heidelbeerstaude zum Geburtstag. Ein Geschenk, ein Insider, vielleicht irgendwann ein Wald.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Attersee 2024</div>
+                <h3>MAMMMAAAAA i brauch mei Handy!!</h3>
+                <p>Die Familiengründung. Ali und Mo vorne, Magdi hinten, Familienurlaub-Vibes. Ab da war die Fake-Familie praktisch offiziell und ist seit dem immer wieder gewachsen.</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Zell am See 2025</div>
+                <h3>Das Einhorn-Kapitel</h3>
+                <p>Urlaub, Wasser, Gruppe und ein riesiges aufblasbares Schwimm-Einhorn. Mehr Symbolbild braucht dieses Kapitel nicht. Auch anwesend waren ganz vile begeisterte Rentner, die wohl noch nie so etwas spannendes in ihrem doch schon relativ langem Leben erlebt hatten (und auch ein paar Araber).</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">29.06.2026</div>
+                <h3>Der LAP-Plot-Twist</h3>
+                <p>Magdi tut so, als hätte sie es nicht geschafft, lädt alle zum Frustsaufen ein und zieht dann die wohl unnötigste, aber sehr starke Täuschung des Jahres durch. Ob es was bedeuten mag, dass ihr jeder geglaubt hat?</p>
+              </div>
+            </article>
+            <article class="timeline-item">
+              <span class="dot"></span>
+              <div class="timeline-card">
+                <div class="timeline-date">Heute: 27.07.2026</div>
+                <h3>18. Geburtstag</h3>
+                <p>Magdi wird 18. Die Seite hier ist der offizielle Beweis, dass sie ein bisschen gefeiert, ein bisschen verarscht und sehr gern gehabt wird.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="abschluss">
+        <div class="inner">
+          <div class="section-head">
+            <span class="section-kicker">Zum Schluss</span>
+            <h2>Eine ehrliche Nachricht</h2>
+          </div>
+          <div class="letter">
+            <p>Liebe Magdi,</p>
+            <p>alles Gute zu deinem 18. Geburtstag. Ich hoffe, du weißt, wie unglaublich gern ich dich habe und wie froh ich bin, dass du Teil von meinem Leben bist. Mit dir wird es selten langweilig, meistens lustig und sehr oft genau die Art von Chaos, an die man sich später gern erinnert.</p>
+            <p>Ich finde es unglaublich schön, wie lebensfroh du bist, wie viel Humor du hast und wie selbstverständlich man sich auf dich verlassen kann. Du bist bei jedem Blödsinn dabei, aber trotzdem jemand, der da ist, wenn man dich braucht. Genau das macht dich so besonders.</p>
+            <p>Bleib bitte so, wie du bist: abenteuerlustig, hilfsbereit, herzlich, lustig und voller Energie. Ich wünsche dir für alles, was jetzt kommt, nur das Beste, viele gute Menschen um dich herum, viele schöne Erinnerungen, einen Job der dir gefällt 👮🏼 und natürlich genug Heidelbeeren.</p>
+            <div class="signature">- Dein Papa</div>
+            <div class="hero-actions">
+              <a class="button secondary" href="#top">Nochmal ansehen</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Bildansicht">
+    <button class="lightbox-close" type="button" id="lightboxClose" aria-label="Bild schliessen">×</button>
+    <img id="lightboxImage" src="" alt="">
+  </div>
+
+  <script>
+    const reasons = [
+      {
+        title: "Weil du Lebensfreude ausstrahlst",
+        text: "Bei dir merkt man schnell: Da ist jemand, der gerne lebt, gerne lacht und aus normalen Momenten etwas Besonderes machen kann."
+      },
+      {
+        title: "Weil dein Humor einfach funktioniert",
+        text: "Du bringst Leute zum Lachen, ohne dich dabei verstellen zu müssen. Das ist eine seltene und sehr starke Eigenschaft."
+      },
+      {
+        title: "Weil du bei jedem Blödsinn dabei bist",
+        text: "Nicht unüberlegt, aber mit genau der richtigen Energie: Wenn es lustig wird, bist du meistens nicht weit weg."
+      },
+      {
+        title: "Weil man sich auf dich verlassen kann",
+        text: "Du bist nicht nur für die guten Momente da. Wenn es wichtig wird, kann man mit dir rechnen."
+      },
+      {
+        title: "Weil du hilfsbereit bist",
+        text: "Wenn jemand Fragen hat oder nicht weiterkommt, hilfst du gerne. Und meistens auch ohne großes Drama."
+      },
+      {
+        title: "Weil du ein richtiger Familienmensch bist",
+        text: "Egal ob echte Familie oder komplett erfundene Fake-Familie: Du bringst Wärme in Gruppen. ☀️"
+      },
+      {
+        title: "Weil du Party kannst",
+        text: "Du hast diese Mischung aus Stimmung, Offenheit und guter Laune, die Abende deutlich besser macht."
+      },
+      {
+        title: "Weil Beer Pong bei dir kein Nebenthema ist",
+        text: "Andere spielen Beer Pong. Du nimmst Beer Pong ernst genug, dass man Respekt haben muss."
+      },
+      {
+        title: "Weil Autofahren bei dir Freude auslöst",
+        text: "Manche fahren einfach von A nach B. Bei dir wirkt es eher wie ein eigener kleiner Lebensabschnitt mit Lenkrad."
+      },
+      {
+        title: "Weil du Menschen zusammenbringst",
+        text: "Du bist eine von den Personen, durch die Gruppen nicht nur existieren, sondern sich lebendig anfühlen."
+      },
+      {
+        title: "Weil du nicht langweilig bist",
+        text: "Mit dir hat fast jede Geschichte eine Wendung. Manchmal geplant, manchmal absolut nicht, aber meistens gut."
+      },
+      {
+        title: "Weil du herzlich bist",
+        text: "Du hast eine Art, bei der man merkt, dass dir Menschen wirklich wichtig sind."
+      },
+      {
+        title: "Weil du Magdi bist",
+        text: "Klingt simpel, ist aber ein voller Grund. Manche Leute sind nicht ersetzbar. Du gehörst eindeutig dazu. Und von wem würde ich dann noch Heidelbeeren klauen können?"
+      },
+      {
+        title: "Weil du Abenteuer magst",
+        text: "Du bist offen für Unternehmungen, Fahrten, Urlaube und genau die kleinen Eskalationen, aus denen Erinnerungen werden."
+      },
+      {
+        title: "Weil du als Tochter legendär bist",
+        text: "Die Fake-Familie hätte ohne dich nicht funktioniert. Du bist die Tochter, um die sich das ganze Chaos drehen darf."
+      },
+      {
+        title: "Weil du gute Energie in Gruppen bringst",
+        text: "Du musst nicht viel machen, damit es mit dir angenehmer, lustiger oder lebendiger wird."
+      },
+      {
+        title: "Weil du echt bist",
+        text: "Du wirkst nicht gespielt. Du bist einfach du, und genau das ist wahrscheinlich einer deiner besten Punkte."
+      },
+      {
+        title: "Weil du sehr gern gehabt wirst",
+        text: "Von Ali, von deiner Fake-Familie und von vielen Menschen rundherum. Verdient, offensichtlich und hiermit schriftlich festgehalten."
+      }
+    ];
+
+    const museumImages = Array.from({ length: 69 }, (_, index) => `images/image-${index + 1}.jpeg`);
+
+    const shuffle = (items) => {
+      const copy = [...items];
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    };
+
+    const reasonsGrid = document.querySelector("#reasonsGrid");
+    shuffle(reasons).forEach((reason, index) => {
+      const card = document.createElement("button");
+      card.className = "reason-card";
+      card.type = "button";
+      card.setAttribute("aria-expanded", "false");
+      card.innerHTML = `
+        <div class="reason-top">
+          <span class="number">${String(index + 1).padStart(2, "0")}</span>
+          <span class="reason-title">${reason.title}</span>
+          <span class="chevron">+</span>
+        </div>
+        <div class="reason-detail">${reason.text}</div>
+      `;
+      card.addEventListener("click", () => {
+        const isOpen = card.getAttribute("aria-expanded") === "true";
+        card.setAttribute("aria-expanded", String(!isOpen));
+      });
+      reasonsGrid.appendChild(card);
+    });
+
+    const museumGrid = document.querySelector("#museumGrid");
+    museumImages.forEach((src, index) => {
+      const button = document.createElement("button");
+      button.className = "museum-item";
+      button.type = "button";
+      button.innerHTML = `<img src="${src}" alt="Magdi-Museum Bild ${index + 1}" loading="lazy">`;
+      button.addEventListener("click", () => openLightbox(src, `Magdi-Museum Bild ${index + 1}`));
+      museumGrid.appendChild(button);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".museum-item").forEach((item) => observer.observe(item));
+
+    const lightbox = document.querySelector("#lightbox");
+    const lightboxImage = document.querySelector("#lightboxImage");
+    const lightboxClose = document.querySelector("#lightboxClose");
+
+    function openLightbox(src, alt) {
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.classList.add("is-open");
+      document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      document.body.classList.remove("lightbox-open");
+      lightboxImage.src = "";
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    const berryButton = document.querySelector("#berryButton");
+    berryButton.addEventListener("click", () => {
+      const amount = 22;
+      for (let i = 0; i < amount; i += 1) {
+        const berry = document.createElement("span");
+        berry.className = "flying-berry";
+        berry.textContent = "🫐";
+        berry.style.left = `${Math.random() * 92 + 2}vw`;
+        berry.style.top = `${Math.random() * 82 + 8}svh`;
+        berry.style.animationDelay = `${Math.random() * 260}ms`;
+        document.body.appendChild(berry);
+        setTimeout(() => berry.remove(), 2100);
+      }
+    });
+  </script>
 </body>
 </html>
